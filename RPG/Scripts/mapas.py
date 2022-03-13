@@ -1,0 +1,23 @@
+mapa = [
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+    "ppppp                              ppppp",
+
+]
