@@ -1,6 +1,5 @@
-import main
 from pygame import mixer
-from roomone import *
+from lv1 import *
 
 def gameOver():
     pygame.init()
@@ -30,6 +29,7 @@ def gameOver():
             tela.blit(startTxt, start_rect)
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE]:
+            import main
             main.running = True
             game = False
         pygame.display.update()

@@ -2,15 +2,18 @@
 
 import pygame
 
-
+LARGURA_BLK = 32
+ALTURA_BLK = 32
 LARGURA_TELA = 800
 ALTURA_TELA = 600
 
 PRETO = (0, 0, 0)
+VERMELHO = (255, 0, 0)
 
 x = 300
 y = 490
 vel = 7
+
 
 largura = 32
 altura = 32
@@ -51,3 +54,8 @@ walkRightE = [pygame.image.load('../Assets/Personagens/ER1.png'),
 walkLeftE = [pygame.image.load('../Assets/Personagens/EL1.png'),
             pygame.image.load('../Assets/Personagens/EL2.png'),
             pygame.image.load('../Assets/Personagens/EL3.png')]
+
+collideRight = False
+collideLeft = False
+collideTop = False
+collideBot = False
