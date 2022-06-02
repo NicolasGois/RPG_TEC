@@ -18,7 +18,7 @@ def entrada():
 
         def draw(self, screen):
             self.hitbox1 = pygame.Rect((370 + fundo_x, 200 + fundo_y), (30, 40))
-            pygame.draw.rect(screen, VERMELHO, self.hitbox1, 2)
+            # pygame.draw.rect(screen, VERMELHO, self.hitbox1, 2)
 
     # Imagens e Sons
     pilar = pygame.image.load('../Assets/Mapa/pilares.png').convert_alpha()
@@ -41,6 +41,7 @@ def entrada():
         return fundo_x, fundo_y
 
     # Itens
+
     class Itens:
         def __init__(self, x, y):
             self.x = x
@@ -63,7 +64,7 @@ def entrada():
                 scr.blit(keyImg, keyImgRect)
 
     # Loop do Jogo
-    x = 300
+    x = 375
     y = 490
     personagem = Player(x, y, 32, 32)
     porta = Porta()
@@ -85,6 +86,7 @@ def entrada():
             running = False
 
         keys = pygame.key.get_pressed()
+
         if keys[pygame.K_LEFT] and personagem.x >= fundo_x:
             personagem.x -= personagem.vel
             fundo_x += vel
@@ -95,7 +97,6 @@ def entrada():
             personagem.right = False
             personagem.up = False
             personagem.down = False
-
         elif keys[pygame.K_RIGHT] and personagem.x <= LARGURA_TELA + fundo_x - largura:
             personagem.x += personagem.vel
             fundo_x -= vel

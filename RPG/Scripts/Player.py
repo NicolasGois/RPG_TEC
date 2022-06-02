@@ -7,7 +7,8 @@ class Player(object):
         self.y = Y
         self.largura = width
         self.altura = height
-        self.vel = vel
+        self.vel_x = 7
+        self.vel_y = 7
         self.left = False
         self.right = False
         self.up = False
@@ -34,7 +35,7 @@ class Player(object):
             screen.blit(parado, (self.x, self.y))
 
         self.rect = pygame.Rect((self.x, self.y), (self.largura, self.altura))
-        pygame.draw.rect(screen, VERMELHO, self.rect, 2)
+        # pygame.draw.rect(screen, VERMELHO, self.rect, 2)
     # Classe Inimigo
 class Inimigos(object):
     def __init__(self, a, b, width, height, end):
@@ -45,7 +46,7 @@ class Inimigos(object):
         self.end = end
         self.path = [a, end]
         self.walkCount = 0
-        self.vel = 5
+        self.vel = 7
         self.rect = pygame.Rect((self.x, self.y), (self.width, self.height))
 
 
@@ -67,10 +68,11 @@ class Inimigos(object):
                 self.x += self.vel
             else:
                 self.vel = self.vel * -1
-                self.walkCount = 0
+                self.walkCount = 1
         else:
             if self.x - self.vel > self.path[0]:
                 self.x += self.vel
             else:
                 self.vel = self.vel * -1
                 self.walkCount = 0
+

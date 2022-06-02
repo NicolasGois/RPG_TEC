@@ -34,12 +34,6 @@ def corredorf():
             self.hitbox3 = pygame.Rect((26 + fx, 282 + fy), (40, 30))
             self.hitbox4 = pygame.Rect((26 + fx, 168 + fy), (40, 30))
             self.hitbox5 = pygame.Rect((26 + fx, 54 + fy), (40, 30))
-            # pygame.draw.rect(screen, VERMELHO, self.hitbox0, 2)
-            # pygame.draw.rect(screen, VERMELHO, self.hitbox1, 2)
-            # pygame.draw.rect(screen, VERMELHO, self.hitbox2, 2)
-            # pygame.draw.rect(screen, VERMELHO, self.hitbox3, 2)
-            # pygame.draw.rect(screen, VERMELHO, self.hitbox4, 2)
-            # pygame.draw.rect(screen, VERMELHO, self.hitbox5, 2)
 
     x = 390
     y = 500
@@ -79,7 +73,7 @@ def corredorf():
 
         keys = pygame.key.get_pressed()
 
-        if keys[pygame.K_LEFT] and character.x >= fx + (x - x):
+        if keys[pygame.K_LEFT] and character.x >= fx + 75:
             character.x -= character.vel
             fx += vel
             character.left = True

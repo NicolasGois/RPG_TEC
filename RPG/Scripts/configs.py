@@ -12,7 +12,8 @@ VERMELHO = (255, 0, 0)
 
 x = 300
 y = 490
-vel = 7
+vel_x = 7
+vel_y = 7
 
 
 largura = 32
@@ -55,7 +56,5 @@ walkLeftE = [pygame.image.load('../Assets/Personagens/EL1.png'),
             pygame.image.load('../Assets/Personagens/EL2.png'),
             pygame.image.load('../Assets/Personagens/EL3.png')]
 
-collideRight = False
-collideLeft = False
-collideTop = False
-collideBot = False
+
+keyCatch = False
