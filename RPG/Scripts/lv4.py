@@ -1,5 +1,7 @@
 from configs import *
 from Player import Player, Inimigos
+from classes import Mesa, Porta, Itens
+from mapas import mapa4
 
 
 def sala4():
@@ -26,7 +28,7 @@ def sala4():
         tela.blit(room, (fx, fy))
         personagem.draw(tela)
         porta.draw()
-        inimigo.draw(tela)
+        mesas.draw(tela, mapa4, mesa, personagem, LARGURA_BLK, ALTURA_BLK)
         pygame.display.update()
 
     # Loop do Jogo
@@ -35,49 +37,19 @@ def sala4():
     fx = 116
     fy = 33
     porta = Porta()
+    mesas = Mesa()
     personagem = Player(x1, y1, 32, 32)
-    inimigo = Inimigos(e_x, e_y, largura, altura, 700)
-
     while game:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                game = False
+                sys.exit()
             if personagem.rect.colliderect(porta.rect):
+                game = False
                 from corrdor import corredorf
                 corredorf()
-        keys = pygame.key.get_pressed()
-
-        if keys[pygame.K_LEFT]:
-            personagem.x -= personagem.vel
-            personagem.left = True
-            personagem.right = False
-            personagem.up = False
-            personagem.down = False
-        elif keys[pygame.K_RIGHT]:
-            personagem.x += personagem.vel
-            personagem.right = True
-            personagem.left = False
-            personagem.up = False
-            personagem.down = False
-        elif keys[pygame.K_UP]:
-            personagem.y -= personagem.vel
-            personagem.up = True
-            personagem.right = False
-            personagem.left = False
-            personagem.down = False
-        elif keys[pygame.K_DOWN]:
-            personagem.y += personagem.vel
-            personagem.down = True
-            personagem.right = False
-            personagem.left = False
-            personagem.up = False
-        else:
-            personagem.right = False
-            personagem.left = False
-            personagem.up = False
-            personagem.down = False
-            personagem.walkCount = 1
+        controls(personagem, mesas)
 
         tela_jogo()
 
         pygame.time.delay(30)
+sala4()

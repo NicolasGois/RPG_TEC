@@ -41,42 +41,14 @@ def sala5():
     while game:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                game = False
+                sys.exit()
             if personagem.rect.colliderect(porta.rect):
+                game = False
                 from corrdor import corredorf
                 corredorf()
         keys = pygame.key.get_pressed()
 
-        if keys[pygame.K_LEFT]:
-            personagem.x -= personagem.vel
-            personagem.left = True
-            personagem.right = False
-            personagem.up = False
-            personagem.down = False
-        elif keys[pygame.K_RIGHT]:
-            personagem.x += personagem.vel
-            personagem.right = True
-            personagem.left = False
-            personagem.up = False
-            personagem.down = False
-        elif keys[pygame.K_UP]:
-            personagem.y -= personagem.vel
-            personagem.up = True
-            personagem.right = False
-            personagem.left = False
-            personagem.down = False
-        elif keys[pygame.K_DOWN]:
-            personagem.y += personagem.vel
-            personagem.down = True
-            personagem.right = False
-            personagem.left = False
-            personagem.up = False
-        else:
-            personagem.right = False
-            personagem.left = False
-            personagem.up = False
-            personagem.down = False
-            personagem.walkCount = 1
+        controls(personagem, mesas)
 
         tela_jogo()
 

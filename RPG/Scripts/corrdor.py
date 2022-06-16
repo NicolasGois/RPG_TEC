@@ -5,14 +5,14 @@ import sys
 
 def corredorf():
     pygame.init()
-    corredor = pygame.image.load('../Assets/Mapa/corredor1.png')
+    corredor = pygame.image.load('../Assets/Mapa/corredor2.png')
     tela = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
     pygame.display.set_caption('RPG')
     game = True
 
     def tela_jogo():
         global walkCount
-        tela.fill((0, 204, 204))
+        tela.fill((0, 0, 0))
         tela.blit(corredor, (fx, fy))
         character.draw(tela)
         portas.draw(tela)
@@ -20,25 +20,26 @@ def corredorf():
 
     class Porta:
         def __init__(self):
-            self.hitbox0 = pygame.Rect((150 + fx, 550 + fy), (30, 40))
-            self.hitbox1 = pygame.Rect((26 + fx, 510 + fy), (40, 30))
-            self.hitbox2 = pygame.Rect((26 + fx, 396 + fy), (40, 30))
-            self.hitbox3 = pygame.Rect((26 + fx, 282 + fy), (40, 30))
-            self.hitbox4 = pygame.Rect((26 + fx, 168 + fy), (40, 30))
-            self.hitbox5 = pygame.Rect((26 + fx, 54 + fy), (40, 30))
+            self.hitbox0 = pygame.Rect((203 + fx, 535 + fy), (30, 40))
+            self.hitbox1 = pygame.Rect((81 + fx, 486 + fy), (40, 30))
+            self.hitbox2 = pygame.Rect((81 + fx, 372 + fy), (40, 30))
+            self.hitbox3 = pygame.Rect((81 + fx, 258 + fy), (40, 30))
+            self.hitbox4 = pygame.Rect((81 + fx, 144 + fy), (40, 30))
+            self.hitbox5 = pygame.Rect((81 + fx, 30 + fy), (40, 30))
 
         def draw(self, screen):
-            self.hitbox0 = pygame.Rect((150 + fx, 550 + fy), (30, 40))
-            self.hitbox1 = pygame.Rect((26 + fx, 510 + fy), (40, 30))
-            self.hitbox2 = pygame.Rect((26 + fx, 396 + fy), (40, 30))
-            self.hitbox3 = pygame.Rect((26 + fx, 282 + fy), (40, 30))
-            self.hitbox4 = pygame.Rect((26 + fx, 168 + fy), (40, 30))
-            self.hitbox5 = pygame.Rect((26 + fx, 54 + fy), (40, 30))
+            self.hitbox0 = pygame.Rect((203 + fx, 535 + fy), (30, 40))
+            self.hitbox1 = pygame.Rect((81 + fx, 486 + fy), (40, 30))
+            self.hitbox2 = pygame.Rect((81 + fx, 372 + fy), (40, 30))
+            self.hitbox3 = pygame.Rect((81 + fx, 258 + fy), (40, 30))
+            self.hitbox4 = pygame.Rect((81 + fx, 144 + fy), (40, 30))
+            self.hitbox5 = pygame.Rect((81 + fx, 30 + fy), (40, 30))
+
 
     x = 390
     y = 500
-    fx = 241
-    fy = 21
+    fx = 200
+    fy = 5
     character = Player(x, y, 32, 32)
     portas = Porta()
     while game:
@@ -73,14 +74,14 @@ def corredorf():
 
         keys = pygame.key.get_pressed()
 
-        if keys[pygame.K_LEFT] and character.x >= fx + 75:
+        if keys[pygame.K_LEFT] and character.x >= fx + 121:
             character.x -= character.vel
             fx += vel
             character.left = True
             character.right = False
             character.up = False
             character.down = False
-        elif keys[pygame.K_RIGHT] and character.x <= fx + 210:
+        elif keys[pygame.K_RIGHT] and character.x <= fx + 273:
             character.x += character.vel
             fx -= vel
             character.right = True
@@ -94,7 +95,7 @@ def corredorf():
             character.right = False
             character.left = False
             character.down = False
-        elif keys[pygame.K_DOWN] and character.y <= fy + ALTURA_TELA - 80:
+        elif keys[pygame.K_DOWN] and character.y <= fy + ALTURA_TELA - 105:
             character.y += character.vel
             fy -= vel
             character.down = True

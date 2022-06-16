@@ -7,8 +7,7 @@ class Player(object):
         self.y = Y
         self.largura = width
         self.altura = height
-        self.vel_x = 7
-        self.vel_y = 7
+        self.vel = 8
         self.left = False
         self.right = False
         self.up = False
@@ -74,5 +73,5 @@ class Inimigos(object):
                 self.x += self.vel
             else:
                 self.vel = self.vel * -1
-                self.walkCount = 0
+                self.walkCount = 1
 
