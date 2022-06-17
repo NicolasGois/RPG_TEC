@@ -106,6 +106,7 @@ def corredorf():
             character.walkCount = 1
         tela_jogo()
         pygame.time.delay(30)
+        print(keyIdx)
 
 
 corredorf()

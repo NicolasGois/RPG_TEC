@@ -29,8 +29,8 @@ def gameOver():
             tela.blit(startTxt, start_rect)
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE]:
-            import main
-            main.running = True
+            from menu import menu
+            menu()
             game = False
         pygame.display.update()
         pygame.time.delay(8)

@@ -58,7 +58,14 @@ walkLeftE = [pygame.image.load('../Assets/Personagens/EL1.png'),
 
 mesa = pygame.image.load('../Assets/Mapa/mesa2.png')
 cones = pygame.image.load('../Assets/Mapa/cones.png')
-keyCatch = False
+
+keyYellow = pygame.image.load('../Assets/Itens/key1.png')
+keyRed = pygame.image.load('../Assets/Itens/key2.png')
+keyGreen = pygame.image.load('../Assets/Itens/key3.png')
+keyBlue = pygame.image.load('../Assets/Itens/key4.png')
+
+
+keyIdx = 1
 
 def controls(psg, object):
         keys = pygame.key.get_pressed()

@@ -132,5 +132,3 @@ def entrada():
         tela_jogo()
         pygame.time.delay(30)
 
-
-entrada()

@@ -23,7 +23,8 @@ def sala2():
         inimigo1.draw(tela)
         inimigo2.draw(tela)
         mesas.draw(tela, mapa2, mesa, personagem, LARGURA_BLK, ALTURA_BLK)
-        chaves.keyDraw(tela, personagem)
+        chave1.keyDraw(tela, personagem, keyBlue, True)
+        chave2.keyDraw(tela, personagem, keyYellow, False)
         pygame.display.update()
 
     # Loop do Jogo
@@ -34,7 +35,8 @@ def sala2():
     porta = Porta()
     personagem = Player(x1, y1, 32, 32)
     mesas = Mesa()
-    chaves = Itens(360, 370)
+    chave1 = Itens(360, 370)
+    chave2 = Itens(520, 230)
     inimigo1 = Inimigos(320, 325, largura, altura, 400)
     inimigo2 = Inimigos(320, 420, largura, altura, 400)
 
@@ -42,7 +44,7 @@ def sala2():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
-            if personagem.rect.colliderect(porta.rect) and chaves.keys >= 1:
+            if personagem.rect.colliderect(porta.rect) and chave1.keys >= 1:
                 from corrdor import corredorf
                 corredorf()
             if personagem.rect.colliderect(inimigo1.rect):
@@ -55,3 +57,4 @@ def sala2():
 
         pygame.time.delay(30)
 
+sala2()

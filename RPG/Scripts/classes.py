@@ -15,20 +15,22 @@ class Itens:
         self.y = y
         self.keys = 0
 
-    def keyDraw(self, scr, psg):
+    def keyDraw(self, scr, psg, img, fk):
         pixelFont = pygame.font.Font('../Fontes/Pixeltype.ttf', 30)
-        keyImg = pygame.image.load('../Assets/Itens/key1.png')
-        keyImgRect = keyImg.get_rect(center=(self.x, self.y))
+        keyImgRect = img.get_rect(center=(self.x, self.y))
         text = pixelFont.render(f'Keys: {self.keys}', True, (255, 255, 255))
         text_rect = text.get_rect(center=(50, 50))
         scr.blit(text, text_rect)
-        if keyImgRect.colliderect(psg.rect):
+        if keyImgRect.colliderect(psg.rect) and fk == True:
             self.keys = self.keys + 1
             print(self.keys)
             self.x = 900
             self.y = 900
+        if keyImgRect.colliderect(psg.rect) and fk == False:
+            from gameOver import gameOver
+            gameOver()
         else:
-            scr.blit(keyImg, keyImgRect)
+            scr.blit(img, keyImgRect)
 
 class Mesa:
     def draw(self, scr, mapa, img, psg, width, height):
@@ -43,6 +45,11 @@ class Mesa:
                     self.x = id_coluna * width
                     self.y = id_linha * height
                     scr.blit(img, (self.x, self.y))
+                if self.caracter == 'p':
+                    self.x = id_coluna * width
+                    self.y = id_linha * height
+                    scr.blit(cones, (self.x, self.y))
+
 
 
         for id_linha, linha in enumerate(mapa):
