@@ -44,5 +44,3 @@ def lv6():
             tela_jogo()
 
             pygame.time.delay(30)
-
-lv6()

@@ -56,5 +56,3 @@ def sala2():
         tela_jogo()
 
         pygame.time.delay(30)
-
-sala2()
