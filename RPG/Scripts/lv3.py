@@ -1,3 +1,5 @@
+import pygame.mixer
+
 from configs import *
 from Player import Player, Inimigos
 from mapas import mapa3
@@ -47,23 +49,22 @@ def sala3():
     inimigo1 = Inimigos(cx, cy, largura, altura, 610)
     inimigo2 = Inimigos(cx1, cy1, largura, altura, 610)
 
+
     while game:
-        while game:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
-                if personagem.rect.colliderect(porta.rect) and chave1.keys >= 1:
-                    game = False
-                    from corrdor import corredorf
-                    corredorf()
-            if personagem.rect.colliderect(inimigo1.rect and inimigo2.rect):
-                from gameOver import gameOver
-                gameOver()
-                game = False
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+        if personagem.rect.colliderect(porta.rect) and chave1.keys >= 1:
+            game = False
+            from corrdor import corredorf
+            corredorf()
+        if personagem.rect.colliderect(inimigo1.rect and inimigo2.rect):
+            from gameOver import gameOver
+            gameOver()
+            game = False
 
-            controls(personagem, mesas)
+        controls(personagem, mesas)
 
-            tela_jogo()
+        tela_jogo()
 
-            pygame.time.delay(30)
-sala3()
+        pygame.time.delay(30)

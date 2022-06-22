@@ -44,13 +44,17 @@ def sala2():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
-            if personagem.rect.colliderect(porta.rect) and chave1.keys >= 1:
-                from corrdor import corredorf
-                corredorf()
-            if personagem.rect.colliderect(inimigo1.rect):
-                from gameOver import gameOver
-                gameOver()
-                game = False
+        if personagem.rect.colliderect(porta.rect) and chave1.keys >= 1:
+            from corrdor import corredorf
+            corredorf()
+        if personagem.rect.colliderect(inimigo1.rect):
+            from gameOver import gameOver
+            gameOver()
+            game = False
+        if personagem.rect.colliderect(inimigo1.rect):
+            from gameOver import gameOver
+            gameOver()
+            game = False
         controls(personagem, mesas)
 
         tela_jogo()

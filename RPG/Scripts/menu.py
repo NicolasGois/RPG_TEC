@@ -11,6 +11,8 @@ def menu():
 	# images and fonts
 	start_img = pygame.image.load('../Assets/startBtn.png').convert_alpha()
 	credits_img = pygame.image.load('../Assets/crBtn.png').convert_alpha()
+	start_img1 = pygame.image.load('../Assets/startBtn1.png').convert_alpha()
+	credits_img1 = pygame.image.load('../Assets/crBtn1.png').convert_alpha()
 	bg = pygame.image.load('../Assets/Mapa/wasted.png')
 	logo = pygame.image.load('../Assets/logo.png')
 
@@ -22,14 +24,17 @@ def menu():
 			self.rect.center = (x, y)
 			self.clicked = False
 
-		def draw(self):
+		def draw(self, img1, img):
+			self.img = img
 			action = False
 			pos = pygame.mouse.get_pos()
-
 			if self.rect.collidepoint(pos):
+				self.img = img1
 				if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
 					self.clicked = True
 					action = True
+			else:
+				self.img = img
 			if pygame.mouse.get_pressed()[0] == 0:
 				self.clicked = False
 			screen.blit(self.img, self.rect)
@@ -94,7 +99,7 @@ def menu():
 			pygame.time.delay(30)
 
 	start_btn = Button(400, 400, start_img)
-	credits_btn = Button(400, 500, credits_img)
+	credits_btn = Button(400, 520, credits_img)
 	running = True
 
 	# game loop
@@ -105,10 +110,10 @@ def menu():
 			if event.type == pygame.QUIT:
 				sys.exit()
 
-		if start_btn.draw():
+		if start_btn.draw(start_img1, start_img):
 			from main import entrada
 			entrada()
-		if credits_btn.draw():
+		if credits_btn.draw(credits_img1, credits_img):
 			credits()
 
 			game = False

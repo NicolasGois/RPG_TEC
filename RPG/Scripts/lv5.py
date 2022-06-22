@@ -20,8 +20,13 @@ def sala5():
         tela.blit(room, (fx, fy))
         personagem.draw(tela)
         porta.draw(tela, fx, fy)
+        foe1.draw(tela)
         mesas.draw(tela, mapa5, mesa, personagem, LARGURA_BLK, ALTURA_BLK)
-        chaves.keyDraw(tela, personagem)
+        k1.keyDraw(tela, personagem, keyRed, False)
+        k2.keyDraw(tela, personagem, keyBlue, False)
+        k3.keyDraw(tela, personagem, keyYellow, False)
+        k4.keyDraw(tela, personagem, keyGreen, True)
+        foe2.draw(tela)
         pygame.display.update()
 
     # Loop do Jogo
@@ -35,21 +40,27 @@ def sala5():
     mesas = Mesa()
     chaves = Itens(610, 335)
     personagem = Player(x1, y1, 32, 32)
+    k1 = Itens(310, 495)
+    k2 = Itens(550, 465)
+    k3 = Itens(190, 370)
+    k4 = Itens(470, 425)
+    foe1 = Inimigos(160, 280, largura, altura, 200)
+    foe2 = Inimigos(260, 420, largura, altura, 400)
 
     while game:
-        while game:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
-                if personagem.rect.colliderect(porta.rect) and chaves.keys >= 1:
-                    game = False
-                    from corrdor import corredorf
-                    corredorf()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+        if personagem.rect.colliderect(porta.rect):
+            game = False
+            from corrdor import corredorf
+            corredorf()
 
-            controls(personagem, mesas)
+        controls(personagem, mesas)
 
-            tela_jogo()
+        tela_jogo()
 
-            pygame.time.delay(30)
+        pygame.time.delay(30)
+
 
 sala5()
