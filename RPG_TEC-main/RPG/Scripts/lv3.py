@@ -43,8 +43,8 @@ def sala3():
     chave2 = Itens(150, 400)
     chave3 = Itens(610, 460)
     personagem = Player(x1, y1, 32, 32)
-    inimigo1 = Inimigos(cx, cy, largura, altura, 610)
-    inimigo2 = Inimigos(cx1, cy1, largura, altura, 610)
+    inimigo1 = Inimigos(cx, cy, largura, altura, 610, 0, 6)
+    inimigo2 = Inimigos(cx1, cy1, largura, altura, 610, 0, 6)
 
 
     while game:
@@ -55,7 +55,11 @@ def sala3():
             from corrdor import corredorf
             corredorf()
             game = False
-        if personagem.rect.colliderect(inimigo1.rect and inimigo2.rect):
+        if personagem.rect.colliderect(inimigo1.rect):
+            from gameOver import gameOver
+            gameOver()
+            game = False
+        if personagem.rect.colliderect(inimigo2.rect):
             from gameOver import gameOver
             gameOver()
             game = False

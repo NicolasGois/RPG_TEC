@@ -37,9 +37,9 @@ def sala4():
     fy = 33
     porta = Porta()
     mesas = Mesa()
-    foe1 = Inimigos(300, 230, largura, altura, 420)
-    foe2 = Inimigos(300, 470, largura, altura, 420)
-    foe3 = Inimigos(200, 340, largura, altura, 525)
+    foe1 = Inimigos(300, 230, largura, altura, 420, 0, 6)
+    foe2 = Inimigos(300, 470, largura, altura, 420, 0, 6)
+    foe3 = Inimigos(200, 340, largura, altura, 525, 0, 6)
     k1 = Itens(365, 370)
     k2 = Itens(365, 450)
     k3 = Itens(230,370)

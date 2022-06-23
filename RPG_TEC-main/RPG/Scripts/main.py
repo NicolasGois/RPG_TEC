@@ -68,7 +68,7 @@ def entrada():
     y = 490
     personagem = Player(x, y, 32, 32)
     porta = Porta()
-    foes = Inimigos(e_x, e_y, largura, altura, 700)
+    foes = Inimigos(e_x, e_y, largura, altura, 700,0, 6)
     chaves = Itens(390, 310)
     while running:
         for event in pygame.event.get():

@@ -56,6 +56,14 @@ walkLeftE = [pygame.image.load('../Assets/Personagens/EL1.png'),
             pygame.image.load('../Assets/Personagens/EL2.png'),
             pygame.image.load('../Assets/Personagens/EL3.png')]
 
+walkUpE = [pygame.image.load('../Assets/Personagens/U1E.png'),
+             pygame.image.load('../Assets/Personagens/U2E.png'),
+             pygame.image.load('../Assets/Personagens/U3E.png')]
+
+walkDownE = [pygame.image.load('../Assets/Personagens/D1E.png'),
+            pygame.image.load('../Assets/Personagens/D2E.png'),
+            pygame.image.load('../Assets/Personagens/D3E.png')]
+
 mesa = pygame.image.load('../Assets/Mapa/mesa2.png')
 cones = pygame.image.load('../Assets/Mapa/cones.png')
 

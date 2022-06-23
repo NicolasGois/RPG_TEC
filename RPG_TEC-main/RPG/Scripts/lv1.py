@@ -35,8 +35,8 @@ def sala1():
     personagem = Player(x1, y1, 32, 32)
     k1 = Itens(320, 360)
     k2 = Itens(420, 360)
-    foe1 = Inimigos(250, 230, largura, altura, 460)
-    foe2 = Inimigos(250, 470, largura, altura, 460)
+    foe1 = Inimigos(250, 230, largura, altura, 460, 0, 6)
+    foe2 = Inimigos(250, 470, largura, altura, 460, 0, 6)
     mesas = Mesa()
 
 

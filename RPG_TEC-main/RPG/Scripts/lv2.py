@@ -37,8 +37,8 @@ def sala2():
     mesas = Mesa()
     chave1 = Itens(360, 370)
     chave2 = Itens(520, 230)
-    inimigo1 = Inimigos(320, 325, largura, altura, 400)
-    inimigo2 = Inimigos(320, 420, largura, altura, 400)
+    inimigo1 = Inimigos(320, 325, largura, altura, 400, 0, 6)
+    inimigo2 = Inimigos(320, 420, largura, altura, 400, 0, 6)
 
     while game:
         for event in pygame.event.get():

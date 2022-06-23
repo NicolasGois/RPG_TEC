@@ -27,10 +27,12 @@ def sala5():
         k3.keyDraw(tela, personagem, keyYellow, False)
         k4.keyDraw(tela, personagem, keyGreen, True)
         foe2.draw(tela)
+        foe3.draw(tela)
+        foe4.draw(tela)
         pygame.display.update()
 
     # Loop do Jogo
-    x1 = 400
+    x1 = 600
     y1 = 230
 
     fx = 116
@@ -44,8 +46,10 @@ def sala5():
     k2 = Itens(550, 465)
     k3 = Itens(190, 370)
     k4 = Itens(470, 425)
-    foe1 = Inimigos(160, 280, largura, altura, 200)
-    foe2 = Inimigos(260, 420, largura, altura, 400)
+    foe1 = Inimigos(160, 280, largura, altura, 200, 0, 6)
+    foe2 = Inimigos(260, 420, largura, altura, 400, 0, 6)
+    foe3 = Inimigos(500, 380, largura, altura, 600, 0, 6)
+    foe4 = Inimigos(200, 510, largura, altura, 270, 0, 6)
 
     while game:
         for event in pygame.event.get():
@@ -55,9 +59,26 @@ def sala5():
             game = False
             from corrdor import corredorf
             corredorf()
+        if personagem.rect.colliderect(foe1.rect):
+            from gameOver import gameOver
+            gameOver()
+            game = False
+        if personagem.rect.colliderect(foe2.rect):
+            from gameOver import gameOver
+            gameOver()
+            game = False
+        if personagem.rect.colliderect(foe3.rect):
+            from gameOver import gameOver
+            gameOver()
+            game = False
+        if personagem.rect.colliderect(foe4.rect):
+            from gameOver import gameOver
+            gameOver()
+            game = False
 
         controls(personagem, mesas)
 
         tela_jogo()
 
         pygame.time.delay(30)
+sala5()
