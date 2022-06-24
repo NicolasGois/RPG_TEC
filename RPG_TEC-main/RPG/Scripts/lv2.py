@@ -2,17 +2,17 @@ from configs import *
 from mapas import mapa2
 from Player import Player, Inimigos
 from classes import Itens, Mesa, Porta
-
+from pygame import mixer
 
 def sala2():
     pygame.init()
+    pygame.mixer.init()
     tela = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
     pygame.display.set_caption('RPG')
 
     # Imagens
     room = pygame.image.load('../Assets/Mapa/lv2.png')
     game = True
-
     # Desenhar a tela do jogo na tela
     def tela_jogo():
         global walkCount, collideTop
@@ -35,6 +35,7 @@ def sala2():
     porta = Porta()
     personagem = Player(x1, y1, 32, 32)
     mesas = Mesa()
+    music.play()
     chave1 = Itens(360, 370)
     chave2 = Itens(520, 230)
     inimigo1 = Inimigos(320, 325, largura, altura, 400, 0, 6)
@@ -60,4 +61,3 @@ def sala2():
         tela_jogo()
 
         pygame.time.delay(30)
-

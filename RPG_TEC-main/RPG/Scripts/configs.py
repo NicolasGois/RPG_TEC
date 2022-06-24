@@ -1,8 +1,9 @@
 # Váriaveis e constantes usadas no jogo
-
 import pygame
+from pygame import mixer
 import sys
 
+pygame.mixer.init()
 LARGURA_BLK = 32
 ALTURA_BLK = 32
 LARGURA_TELA = 800
@@ -72,6 +73,7 @@ keyRed = pygame.image.load('../Assets/Itens/key2.png')
 keyGreen = pygame.image.load('../Assets/Itens/key3.png')
 keyBlue = pygame.image.load('../Assets/Itens/key4.png')
 
+music = mixer.Sound('../Sons/musica.mp3')
 
 keyIdx = 1
 

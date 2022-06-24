@@ -16,14 +16,9 @@ class Itens:
         self.keys = 0
 
     def keyDraw(self, scr, psg, img, fk):
-        pixelFont = pygame.font.Font('../Fontes/Pixeltype.ttf', 30)
         keyImgRect = img.get_rect(center=(self.x, self.y))
-        text = pixelFont.render(f'Keys: {self.keys}', True, (255, 255, 255))
-        text_rect = text.get_rect(center=(50, 50))
-        scr.blit(text, text_rect)
         if keyImgRect.colliderect(psg.rect) and fk == True:
             self.keys = self.keys + 1
-            print(self.keys)
             self.x = 900
             self.y = 900
         if keyImgRect.colliderect(psg.rect) and fk == False:

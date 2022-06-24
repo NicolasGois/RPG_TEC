@@ -6,6 +6,7 @@ from classes import Mesa, Itens, Porta
 
 def sala3():
     pygame.init()
+    music = pygame.mixer.Sound('../Sons/musica.mp3')
     tela = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
     pygame.display.set_caption('RPG')
 
@@ -42,6 +43,7 @@ def sala3():
     chave1 = Itens(610, 335)
     chave2 = Itens(150, 400)
     chave3 = Itens(610, 460)
+    music.play()
     personagem = Player(x1, y1, 32, 32)
     inimigo1 = Inimigos(cx, cy, largura, altura, 610, 0, 6)
     inimigo2 = Inimigos(cx1, cy1, largura, altura, 610, 0, 6)

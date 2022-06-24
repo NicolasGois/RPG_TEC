@@ -1,3 +1,5 @@
+import pygame.draw
+
 from configs import *
 from Player import Player
 import sys
@@ -26,6 +28,7 @@ def corredorf():
             self.hitbox3 = pygame.Rect((81 + fx, 258 + fy), (40, 30))
             self.hitbox4 = pygame.Rect((81 + fx, 144 + fy), (40, 30))
             self.hitbox5 = pygame.Rect((81 + fx, 30 + fy), (40, 30))
+            self.hitbox6 = pygame.Rect((310 + fx, 235 + fy), (40, 30))
 
         def draw(self, screen):
             self.hitbox0 = pygame.Rect((203 + fx, 535 + fy), (30, 40))
@@ -34,6 +37,7 @@ def corredorf():
             self.hitbox3 = pygame.Rect((81 + fx, 258 + fy), (40, 30))
             self.hitbox4 = pygame.Rect((81 + fx, 144 + fy), (40, 30))
             self.hitbox5 = pygame.Rect((81 + fx, 30 + fy), (40, 30))
+            self.hitbox6 = pygame.Rect((310 + fx, 235 + fy), (40, 30))
 
 
     x = 390
@@ -71,6 +75,10 @@ def corredorf():
                 from lv5 import sala5
                 game = False
                 sala5()
+            if character.rect.colliderect(portas.hitbox6):
+                from lv6 import sala6
+                game = False
+                sala6()
 
         keys = pygame.key.get_pressed()
 
@@ -81,7 +89,7 @@ def corredorf():
             character.right = False
             character.up = False
             character.down = False
-        elif keys[pygame.K_RIGHT] and character.x <= fx + 273:
+        elif keys[pygame.K_RIGHT] and character.x <= fx + 274:
             character.x += character.vel
             fx -= vel
             character.right = True

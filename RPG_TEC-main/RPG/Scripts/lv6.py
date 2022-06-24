@@ -2,10 +2,12 @@ from configs import *
 from Player import Player, Inimigos
 from mapas import mapa6
 from classes import Mesa, Itens
+from pygame import mixer
 
 
 def sala6():
     pygame.init()
+    pygame.mixer.init()
     tela = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
     pygame.display.set_caption('RPG')
 
@@ -69,13 +71,14 @@ def sala6():
     k3 = Itens(40, 340)
     k4 = Itens(40, 410)
 
+    music.play()
+
     personagem = Player(x1, y1, 32, 32)
 
     while game:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                game = False
-
+                sys.exit()
         if personagem.rect.colliderect(foe1.rect):
             from gameOver import gameOver
             gameOver()
@@ -158,4 +161,3 @@ def sala6():
         tela_jogo()
 
         pygame.time.delay(30)
-sala6()

@@ -1,3 +1,5 @@
+import pygame.mixer
+
 from configs import *
 from Player import Player, Inimigos
 from mapas import mapa5
@@ -6,6 +8,7 @@ from classes import Mesa, Itens, Porta
 
 def sala5():
     pygame.init()
+    music = pygame.mixer.Sound('../Sons/musica.mp3')
     tela = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
     pygame.display.set_caption('RPG')
 
@@ -46,6 +49,7 @@ def sala5():
     k2 = Itens(550, 465)
     k3 = Itens(190, 370)
     k4 = Itens(470, 425)
+    music.play()
     foe1 = Inimigos(160, 280, largura, altura, 200, 0, 6)
     foe2 = Inimigos(260, 420, largura, altura, 400, 0, 6)
     foe3 = Inimigos(500, 380, largura, altura, 600, 0, 6)
@@ -55,7 +59,7 @@ def sala5():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
-        if personagem.rect.colliderect(porta.rect):
+        if personagem.rect.colliderect(porta.rect) and k4.keys >= 1:
             game = False
             from corrdor import corredorf
             corredorf()
@@ -81,4 +85,3 @@ def sala5():
         tela_jogo()
 
         pygame.time.delay(30)
-sala5()
